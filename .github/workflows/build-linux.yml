@@ -41,7 +41,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3-jinja2
           cd Telegram/build/docker/centos_env
-          DOCKERFILE=$(DEBUG= python3 gen_dockerfile.py)
+          DOCKERFILE=$(DEBUG= LTO= JOBS=2 python3 gen_dockerfile.py)
           echo "$DOCKERFILE" > Dockerfile
           rm -rf __pycache__
           head -5 Dockerfile
